@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+    <script src="/scripts/composer-char-counter.js"></script>
+    <script src="/scripts/icon-anim.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -70,8 +71,28 @@
       <article class="tweet-base">
         <header>
           <div class="user">
-            <p>Ritz</p>
+            <p> <i class="fa-brands fa-bilibili"></i> &nbsp;Ritz </p>
+         </div>
+          <h4>@ArenRitz</h4>
+        </header>
+        <div class="tweet-content">
+          <p >Wooooooooooooooooooooooooooooooah</p>
+        </div>  
+        <footer>
+          <span>10 days ago</span>
+          <div class='tweet-reactions'>
+            <i class="fas fa-flag" id="icon-flag"></i>
+            <i class="fas fa-retweet" id="icon-retweet"></i>
+            <i class="fas fa-heart" id="icon-heart"></i>
           </div>
+        </footer>
+      </article>
+
+      <article class="tweet-base">
+        <header>
+          <div class="user">
+            <p> <i class="fa-brands fa-bilibili"></i> &nbsp;Ritz </p>
+         </div>
           <h4>@ArenRitz</h4>
         </header>
         <div class="tweet-content">
@@ -96,6 +117,6 @@
       
     </footer>
 
-    <script src="/scripts/composer-char-counter.js"></script>
+
   </body>
 </html>
