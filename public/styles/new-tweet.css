@@ -1,0 +1,58 @@
+form {
+  border-radius: 5px;
+}
+
+.new-tweet {
+  font-weight: 300;
+  max-width: 100%;
+  width: 100%;
+  overflow: auto;
+  padding: 5%;
+}
+
+.new-tweet h2 {
+  color: #4056A1;
+  border-bottom: 3px solid #4056A1;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+textarea {
+  resize: none;
+  border: none;
+  border-bottom: 5px solid #4056A1;
+  margin-top: 5%;
+  margin-bottom: 0.5em;
+  padding: 2%;
+  width: 100%;
+  background-color: #f4f1ec;
+}
+
+textarea:focus, input:focus{
+  outline: 0;
+}
+
+
+.counter {
+  float: right;
+  font-style: italic;
+  font-weight: bold;
+  color: #4056A1;
+}
+
+.submit-btn {
+  float: left;
+  font-family: Bungee, sans-serif;
+  color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #4056A1;
+}
+
+.warn {
+  color: rgba(223, 72, 72);
+  font-weight: bold;
+}
