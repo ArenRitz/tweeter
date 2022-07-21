@@ -8,6 +8,7 @@ form {
   width: 100%;
   overflow: auto;
   padding: 5%;
+
 }
 
 .new-tweet-base h2 {
@@ -28,7 +29,7 @@ textarea {
   background-color: #f4f1ec;
 }
 
-textarea:focus, input:focus{
+textarea:focus {
   outline: 0;
 }
 
@@ -55,4 +56,17 @@ textarea:focus, input:focus{
 .warn {
   color: rgba(223, 72, 72);
   font-weight: bold;
+}
+
+
+#new-tweet-error {
+  display:none;
+  position:relative;
+  width:100%;
+  color: rgba(223, 72, 72);
+  margin-top: 2rem;
+  padding: 1rem;
+  border:red solid 2px ;
+  min-height: 4rem;
+  text-align: center;
 }

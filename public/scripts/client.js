@@ -34,9 +34,9 @@ $(document).ready(function () {
                     <footer>
                       <span>${date}</span>
                       <div class='tweet-reactions'>
-                        <i class="fas fa-flag" id="icon-flag"></i>
-                        <i class="fas fa-retweet" id="icon-retweet"></i>
-                        <i class="fas fa-heart" id="icon-heart"></i>
+                        <i class="fas fa-flag icon-flag"></i>
+                        <i class="fas fa-retweet icon-retweet"></i>
+                        <i class="fas fa-heart icon-heart"></i>
                       </div>
                     </footer>
                   </article>`);
@@ -64,15 +64,15 @@ $(document).ready(function () {
     // console.log($(this).serialize())
     // console.log('-------')
     // console.log($(this))
-    
+    $('#new-tweet-error').slideUp();
     //form validation
     if (!userInput) {
-      alert("Please enter a tweet");
+      $('#new-tweet-error').text('Please enter a tweet').slideDown(200)
       return;
     }
 
     if (userInput.length > 140) {
-      alert("Tweet is too long");
+      $('#new-tweet-error').text('Tweet is too loooooooooong').slideDown(200)
       return;
     }
 
@@ -102,10 +102,11 @@ $(document).ready(function () {
     $.ajax({
       method: 'GET',
       url: '/tweets',
-    })
-      .then(function (tweet) {
-        renderTweets(tweet);
-      });
+      success: function (db) {
+        renderTweets(db);
+      },
+      })
+
 
   }
   loadTweets();

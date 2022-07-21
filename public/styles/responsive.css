@@ -1,0 +1,97 @@
+@media screen and (min-width: 1024px) {
+
+  html{
+    padding-top: 120px;
+  }
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #545149;
+    justify-content: center;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .tweet-countainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  main {
+    width: 55%;
+    background-color: #f4f1ec;
+  }
+
+
+  .main-footer {
+    align-self: flex-end;
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    padding: 1em;
+    margin-top: 60px;
+  }
+
+
+
+  .main-header {
+    background-image: url(../images/cutcube.png);
+    
+
+    height: 400px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+  }
+
+
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #545149;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  
+  main {
+    width: 90%;
+    background-color: #f4f1ec;
+  }
+
+
+  .main-header {
+    background-image: url(../images/cutcube.png);
+    margin-top:120px;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    background-color: grey;
+  }
+
+  
+
+  .main-footer {
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1em;
+    margin-top: 60px;
+  } 
+}
+

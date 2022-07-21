@@ -14,7 +14,13 @@ html {
  * Global layout stuff
  */
 
-body {
+
+
+
+/* ------------------------------ */
+
+/* CSS NOT RESPONSIVE */
+/* body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,17 +34,15 @@ body {
 main {
   width: 90%;
   background-color: #f4f1ec;
-}
+} */
+
+
+/* ------------------------------ */
+
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
 
- .main-footer {
-  width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 1em;
-  margin-top: 60px;
-}
