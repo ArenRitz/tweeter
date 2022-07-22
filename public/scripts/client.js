@@ -7,7 +7,40 @@
 
 
 $(document).ready(function () {
-  //
+  
+  
+  $('.newt').on('click', function () {
+    let status = $('.new-tweet-base').is(':visible');
+    console.log(status);
+  if (!status) {
+    $('.new-tweet-base').slideDown(200) ;
+    $('.new-tweet-text').focus();
+    $('no-tweet-form').slideUp(1);
+  } else {
+    $('.new-tweet-base').slideUp(200)
+    $('no-tweet-form').slideDown(1)
+  }
+
+  });
+
+  if($(window).scrollTop() === 0) {
+    $('#send-to-top').fadeOut(1);
+  };
+
+
+  $(document).scroll(function() { 
+    if($(window).scrollTop() > 0) {
+      $('#send-to-top').fadeIn(100);
+    } else {
+      $('#send-to-top').fadeOut(100);
+    }
+ });
+
+ $('#send-to-top').on('click', function() {
+  $(window).scrollTop(0)
+ });
+
+
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));

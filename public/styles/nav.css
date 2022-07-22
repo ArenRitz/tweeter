@@ -32,5 +32,19 @@ nav {
 }
 
 .arrow {
-  color: red
+  margin-top:0.5em;
+  color: salmon;
+}
+
+#send-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  background-color: #4056A1;
+  box-shadow: 0px 0px 10px #4056A1;
+  border-radius: 100%;
+  width: 1.5em;
+  height: 1.5em;
+
 }
