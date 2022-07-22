@@ -4,56 +4,53 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
 $(document).ready(function() {
-  
-  
+
   //Makes new tweet form visible when clicking on "Write a new tweet"
   $('.newt').on('click', function() {
     let status = $('.new-tweet-base').is(':visible');
-    console.log(status);
     if (!status) {
       $('.new-tweet-base').slideDown(200);
-      $('.new-tweet-text').focus();
-      $('no-tweet-form').slideUp(1);
+      $('.new-tweet-text').focus(); //focuses textbox when form is shown
+      $('no-tweet-form').slideUp(1); //hides whitespace
     } else {
       $('.new-tweet-base').slideUp(200);
-      $('no-tweet-form').slideDown(1);
+      $('no-tweet-form').slideDown(1); //adds whitespace
     }
 
   });
 
   if ($(window).scrollTop() === 0) {
-    $('#send-to-top').fadeOut(1);
+    $('#send-to-top').fadeOut(1); // Ensures back to top is hidden on load if at the top.
   }
 
-
+  // shows back to top button at bottom right of screen when user scrolls down past nav size (120px)
   $(document).scroll(function() {
-    if ($(window).scrollTop() > 0) {
+    if ($(window).scrollTop() > 120) {
       $('#send-to-top').fadeIn(100);
     } else {
       $('#send-to-top').fadeOut(100);
     }
   });
 
+  //Sends back to top when button is clicked
   $('#send-to-top').on('click', function() {
     $(window).scrollTop(0);
   });
 
-
+  //prevents users from inputting and running HTML in tweet content
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-
+  // creates new tweet from data inputted in form
   const createTweetElement = function(newTweet) {
     let content = escape(newTweet.content.text);
     let username = newTweet.user.name;
     let handle = newTweet.user.handle;
-    let date = timeago.format(newTweet.created_at);
+    let date = timeago.format(newTweet.created_at);  //Shows time since posted
     const tweet = $(`
                   <article class="tweet-base">
                     <header>
@@ -78,7 +75,7 @@ $(document).ready(function() {
     return tweet;
 
   };
-
+  // Appends all tweets from DB to container from newest to oldest.
   const renderTweets = function(db) {
     $('#tweets-container').empty();
 
@@ -88,34 +85,25 @@ $(document).ready(function() {
     }
   };
 
-  $(".new-tweet-form").submit(function(event) {
-    event.preventDefault();
-    let userInput = event.target[0].value;
 
-    //test input
-    // console.log(userInput)
-    // console.log('-----')
-    // console.log($(this).serialize())
-    // console.log('-------')
-    // console.log($(this))
-    $('#new-tweet-error').slideUp();
+  // Handles form submission with ajax
+  $(".new-tweet-form").submit(function(event) {
+    event.preventDefault(); //prevents default submit to take place
+    let userInput = event.target[0].value;
+    $('#new-tweet-error').slideUp(); // Makes sure errors are not shown
     //form validation
     if (!userInput) {
-      $('#new-tweet-error').text('Please enter a tweet').slideDown(200);
+      $('#new-tweet-error').text('Please enter a tweet').slideDown(200); //Error if form is left empty
       return;
     }
-
     if (userInput.length > 140) {
-      $('#new-tweet-error').text('Tweet is too loooooooooong').slideDown(200);
+      $('#new-tweet-error').text('Tweet is too loooooooooong').slideDown(200); //Error if over character limit
       return;
     }
-
-
-
     $.ajax({
       method: "POST",
       url: "/tweets",
-      data: $(this).serialize()
+      data: $(this).serialize() //Data sent back to server
     }).then(function() {
       //reset form
       event.target[0].value = "";
@@ -125,12 +113,7 @@ $(document).ready(function() {
     });
   });
 
-
-
-
-
-
-
+  //Loads tweets from DB
   const loadTweets = function() {
 
     $.ajax({
@@ -140,12 +123,9 @@ $(document).ready(function() {
         renderTweets(db);
       },
     });
-
-
   };
+
+  //loads tweets on page load
   loadTweets();
-
-
-
 
 });
