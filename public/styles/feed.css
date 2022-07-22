@@ -1,3 +1,5 @@
+/* Container for each tweet */
+
 .tweet-base {
   border: 3px solid #4056A1;
   width: 90%;
@@ -8,6 +10,8 @@
   margin-bottom: 2em;
 }
 
+
+/* Adds box shadow when hover */
 .tweet-base:hover {
   box-shadow: 5px 5px 10px #4056A1;
 }
@@ -69,6 +73,8 @@
   color: lightcoral;
 }
 
+
+/* Whitespace when there is no new tweet form */
 .no-tweet-form {
   width: 100%;
   margin-top: 10vh;

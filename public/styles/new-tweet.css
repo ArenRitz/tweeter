@@ -1,3 +1,4 @@
+/* New tweet form */
 form {
   border-radius: 5px;
 }
@@ -29,6 +30,7 @@ textarea {
   background-color: #f4f1ec;
 }
 
+/* Removes default outline on focus */
 textarea:focus {
   outline: 0;
 }
@@ -58,7 +60,7 @@ textarea:focus {
   font-weight: bold;
 }
 
-
+/* Error only visible when user input is incorrect */
 #new-tweet-error {
   display:none;
   position:relative;

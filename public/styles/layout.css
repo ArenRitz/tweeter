@@ -10,39 +10,63 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+/* Sets page layout  based on screensize */
+
+@media screen and (min-width: 1024px) {
+  /* padding needed for fixed nav */
+  html{
+    padding-top: 120px;
+    
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #545149;
+    justify-content: center;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    height:80%
+  }
+
+  .tweet-countainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+  }
+
+  main {
+    width: 55%;
+    background-color: #f4f1ec;
+  }
 
 
-
-
-/* ------------------------------ */
-
-/* CSS NOT RESPONSIVE */
-/* body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 
+@media screen and (max-width: 1023px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #545149;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  
+  main {
+    width: 90%;
+    background-color: #f4f1ec;
+  }
 
-main {
-  width: 90%;
-  background-color: #f4f1ec;
-} */
 
 
-/* ------------------------------ */
-
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+}
 
 

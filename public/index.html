@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/responsive.css" type="text/css" />
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/scripts/composer-char-counter.js"></script>
@@ -37,16 +36,20 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <div class="nav-logo">
+    <div class="nav-title">
       <span class="title">tweeter</span>
     </div>
 
     <div class="nav-newt">
-      <span class='newt'> Write a new tweet </span>
+
+      <div class="newtweet-btn">
+        <span class='newt write'>Write </span><!-- --><span class='newt'>a new tweet</span>
+      </div>
+
       <i class="fa-solid fa-angles-down fa-bounce arrow"></i>
   </nav>
 
-
+  <!-- User info panel -->
   <header class='main-header'>
     <div class="pfp">
       <img src="/images/profile-hex.png">
@@ -62,8 +65,11 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+
+    <!-- whitespace when there form is hidden -->
     <div class="no-tweet-form"> </div>
 
+    <!-- New tweet form -->
     <section class="new-tweet-base">
       <p id="new-tweet-error">error </p>
       <form method="POST" action="/tweets" class="new-tweet-form">
@@ -74,20 +80,19 @@
           <output name="counter" class="counter" for="new-tweet-text">140</output>
         </div>
       </form>
-
     </section>
 
 
 
-
+    <!-- Section where tweets get appended to -->
     <section id="tweets-container"> </section>
 
 
 
   </main>
-
+ <!-- Back to top button -->
   <button id="send-to-top"> <i class="fa-solid fa-angles-up"></i> </button>
-  <footer class="main-footer"> </footer>
+
 
 
 </body>

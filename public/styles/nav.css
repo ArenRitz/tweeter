@@ -1,3 +1,4 @@
+/* Nav bar container */
 nav {
   position:fixed;
   top:0;
@@ -10,32 +11,45 @@ nav {
   justify-content: space-between;
 }
 
-.title {
+
+/* Title on the left */
+
+.nav-title {
   margin: 1.5em;
   font-family: Bungee, sans-serif;
-
 }
 
-.newt {
+/* "Write a tweet button on the right */
+.newtweet-btn  {
   margin-top: 1.5em;
   margin-right: 1.5em;
+}
+.newtweet-btn:hover {
+  cursor: pointer;
+}
+.newt {
+  margin-top: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+}
+.write {
+  font-weight: bold;
 }
 
-.nav-logo {
-  margin-top: 1.5em;
-}
 .nav-newt {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .arrow {
-  margin-top:0.5em;
+  margin-top: 0.4em;
+  margin-right: 1em;
   color: salmon;
 }
 
+
+
+/* Back to top button */
 #send-to-top {
   position: fixed;
   bottom: 20px;
@@ -48,3 +62,6 @@ nav {
   height: 1.5em;
 
 }
+
+
+
