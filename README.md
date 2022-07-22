@@ -6,7 +6,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-![""]()
+!["Tweeter Preview"](https://github.com/ArenRitz/tweeter/blob/master/docs/tweeter-preview.gif)
 
 
 
